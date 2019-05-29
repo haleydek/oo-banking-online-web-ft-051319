@@ -13,7 +13,7 @@ class Transfer
     @sender.valid? && @receiver.valid?
   end
   
-  def self.execute_transaction
+  def execute_transaction
     counter = 0
     until counter == 1
       if @sender.valid?
