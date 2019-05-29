@@ -13,7 +13,7 @@ class Transfer
     @sender.valid? && @receiver.valid?
   end
   
-  def execute_transaction
+  def self.execute_transaction
     counter = 0
     until counter == 1
       if @sender.valid?
@@ -24,9 +24,11 @@ class Transfer
           counter += 1
         else
           return "Transaction rejected. Please check your account balance."
+          @status = "rejected"
         end
       else
         return "Transaction rejected. Please check your account balance."
+        @status = "rejected"
       end
     end
   end
