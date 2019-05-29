@@ -15,7 +15,7 @@ class Transfer
   end
   
   def execute_transaction
-    until @transaction_counter > 1
+    until @transaction_counter == 1
       @transaction_counter += 1
       if @sender.valid?
         @receiver.deposit(@amount)
