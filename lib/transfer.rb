@@ -25,6 +25,9 @@ class Transfer
         else
           return "Transaction rejected. Please check your account balance."
         end
+      else
+        return "Transaction rejected. Please check your account balance."
+      end
     else
       return "Transaction rejected. Please check your account balance."
     end
