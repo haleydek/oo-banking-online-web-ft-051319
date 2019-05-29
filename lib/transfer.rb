@@ -16,15 +16,15 @@ class Transfer
   def execute_transaction
     counter = 0
     until counter == 1
-    if @sender.valid?
-      @receiver.deposit(@amount)
-      @sender.balance -= @amount
-      if self.valid? == true
-        @status = "complete"
-        counter += 1
-      else
-        return "Transaction rejected. Please check your account balance."
-      end
+      if @sender.valid?
+        @receiver.deposit(@amount)
+        @sender.balance -= @amount
+        if self.valid? == true
+          @status = "complete"
+          counter += 1
+        else
+          return "Transaction rejected. Please check your account balance."
+        end
     else
       return "Transaction rejected. Please check your account balance."
     end
